@@ -29,5 +29,5 @@ for li in matchedlinks:
   #This next line is the troubleshooted version
   #print(li.text_content().encode('utf-8').strip())
   print(li.text_content())
-  #record['address'] = li.text_content()
+  record['address'] = li.text_content().encode('utf-8')
   scraperwiki.sqlite.save(['address'],record)
