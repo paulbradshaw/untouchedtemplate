@@ -27,6 +27,6 @@ for li in matchedlinks[3415:]:
   #Store the text contents of li in a new variable listtext
   listtext = li.text_content()
   #print that
-  print(listtext.encode('utf-8'))
+  #print(listtext.encode('utf-8'))
   record['address'] = listtext
   scraperwiki.sqlite.save(['address'],record)
