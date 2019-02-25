@@ -23,6 +23,13 @@ matchedlinks = root.cssselect("li p a")
 #create a dictionary to store what we find
 record = {}
 #We start from 3416 beacuse 3417 rows were saved before error
+for li in matchedlinks[3415:]:
+  #Store the text contents of li in a new variable listtext
+  listtext = li.text_content()
+  #print that
+  print(listtext)
+  record['address'] = listtext
+  scraperwiki.sqlite.save(['address'],record)
 for li in matchedlinks:
   #This next line is uncommented because it caused a problem
   #print(li.text_content())
