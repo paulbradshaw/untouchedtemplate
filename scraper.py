@@ -30,11 +30,3 @@ for li in matchedlinks[3415:]:
   print(listtext.encode('utf-8'))
   record['address'] = listtext
   scraperwiki.sqlite.save(['address'],record)
-for li in matchedlinks:
-  #This next line is uncommented because it caused a problem
-  #print(li.text_content())
-  #This next line is the troubleshooted version
-  #print(li.text_content().encode('utf-8').strip())
-  print(li.text_content())
-  record['address'] = li.text_content().encode('utf-8')
-  scraperwiki.sqlite.save(['address'],record)
